@@ -29,8 +29,9 @@ function App() {
        .then(res => res.json())
        .then(data => {
         form.reset();
-        const newUser = [...users, data];
-        setUsers(newUser);
+        console.log(data);
+        // const newUser = [...users, data];
+        // setUsers(newUser);
        
        })
   }
