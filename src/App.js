@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function App() {
   
@@ -28,8 +29,13 @@ function App() {
        })
        .then(res => res.json())
        .then(data => {
-        form.reset();
+       
         console.log(data);
+
+        if(data.insertedId){
+          form.reset();
+          alert('user added successfully');
+        }
         // const newUser = [...users, data];
         // setUsers(newUser);
        
@@ -49,6 +55,8 @@ function App() {
           <input type="submit" value="Add" />
           <br />
         </form>
+
+        <Link to='/users'><button>Show Users</button></Link>
       </div>
    
   );
